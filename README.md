@@ -8,13 +8,13 @@ Check out [Setup Guide](docs/ServerSetup.md) for more information on how to inst
 
 ## Contribute to DocsPen
 
-Thank you for considering contributing to the DocsPen. To encourage active collaboration, DocsPen strongly encourages pull requests, not just bug reports. [DocsPen's Slack channel](https://docspen-slack.herokuapp.com) is created for developers to discuss DocsPen development concerns. If you have an idea (and not the code for it) you may contact us either with the we@docspen.com email address or submit it to [issues](https://gitlab.com/DocsPen/Platform/issues/new) in GitLab.
+Thank you for considering contributing to the DocsPen. To encourage active collaboration, DocsPen strongly encourages pull requests, not just bug reports. [DocsPen's Slack channel](https://docspen-slack.herokuapp.com) is created for developers to discuss DocsPen development concerns. If you have an idea (and not the code for it) you may contact us either with the we@docspen.com email address or submit it to [issues](https://github.com/DocsPen/DocsPen/issues/new) in GitHub.
 
 Check out [CONTRIBUTING Guide](CONTRIBUTING.md) for more information on how to help with _DocsPen_.
 
 ## Code of Conduct
 
-Help us keep `DocsPen` open and inclusive. Please read and follow our [Code of Conduct](https://gitlab.com/DocsPen/Platform/blob/master/CODE_OF_CONDUCT.md).
+Help us keep `DocsPen` open and inclusive. Please read and follow our [Code of Conduct](https://github.com/DocsPen/DocsPen/blob/master/CODE_OF_CONDUCT.md).
 
 ## Translations
 
