@@ -1,0 +1,258 @@
+/**
+ * Includes the main navigation header and the faded toolbar.
+ */
+
+header {
+  display: block;
+  z-index: 2;
+  top: 0;
+  background-color: $primary;
+  color: $white;
+  .padded {
+    padding: $-m;
+  }
+  .links {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: $-xl;
+    @include smaller-than($screen-md) {
+      margin-right: 0;
+    }
+  }
+  .links a {
+    background-color: #61bd4f;
+    font-weight: bold;
+    border-radius: 4px;
+    display: inline-block;
+    font-size: 13px;
+    line-height: 1.1em;
+    margin: $-s .25em;
+    padding: 8px 10px;
+    color: $white;
+    text-decoration: none;
+    vertical-align: top;
+
+    @include smaller-than($screen-md) {
+      padding: 8px;
+    }
+  }
+  .links a:hover {
+    background-color: #72c362;
+  }
+  .avatar, .user-name {
+    display: inline-block;
+  }
+  .avatar {
+    width: 30px;
+    height: 30px;
+  }
+  .user-name {
+    vertical-align: top;
+    padding-top: $fs-m;
+    position: relative;
+    top: -3px;
+    display: inline-block;
+    cursor: pointer;
+    > * {
+      vertical-align: top;
+    }
+    > span, > i {
+      padding-left: $-xs;
+      display: inline-block;
+    }
+    > span {
+      padding-top: $-xxs;
+    }
+    > i {
+      padding-top: $-xs;
+      font-size: 18px;
+    }
+    @include smaller-than($screen-md) {
+      padding-left: $-xxs;
+      .name {
+        display: none;
+      }
+    }
+  }
+  @include smaller-than($screen-sm) {
+    text-align: center;
+    .float.right {
+      float: none;
+    }
+    .links a {
+      padding: 8px 10px;
+    }
+    .user-name {
+      padding-top: $fs-m;
+    }
+  }
+}
+
+.header-search {
+  display: inline-block;
+}
+header .search-box {
+  display: inline-block;
+  margin-top: $-s;
+  input {
+    background-color: hsla(0, 0%, 100%, .3);
+    border: none;
+    color: $white;
+    transition: width .15s;
+  }
+  input:focus {
+    background-color: hsla(0, 0%, 100%, 0.42);
+    transition: width .15s;
+    width: 350px;
+  }
+  button {
+    color: $white;
+  }
+  ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: $white;
+  }
+  ::-moz-placeholder { /* Firefox 19+ */
+    color: $white;
+  }
+  :-ms-input-placeholder { /* IE 10+ */
+    color: $white;
+  }
+  :-moz-placeholder { /* Firefox 18- */
+    color: $white;
+  }
+  @include smaller-than($screen-lg) {
+    max-width: 250px;
+  }
+  @include smaller-than($l) {
+    max-width: 200px;
+  }
+}
+
+@include smaller-than($s) {
+  .header-search {
+    display: block;
+  }
+}
+
+.logo {
+  display: inline-block;
+  &:hover {
+    color: $white;
+    text-decoration: none;
+    opacity: .9;
+  }
+}
+.logo-text {
+  display: inline-block;
+  font-size: 23px;
+  color: $white;
+  font-weight: 400;
+  padding: $-m $-l $fs-s 0;
+  vertical-align: top;
+  line-height: 1;
+}
+.logo-image {
+  pointer-events: none;
+  margin: 10px 0 $-xs 0;
+  vertical-align: top;
+  height: 35px;
+}
+
+.breadcrumbs span.sep {
+  color: #aaa;
+  padding: 0 $-xs;
+}
+.faded {
+  a, button, span, span > div {
+    color: #000;
+  }
+  .text-button {
+    opacity: 0.5;
+    transition: all ease-in-out 120ms;
+    &:hover {
+      opacity: 1;
+      text-decoration: none;
+    }
+  }
+}
+
+.faded span.faded-text {
+  display: inline-block;
+  padding: 9px;
+}
+
+.faded-small {
+  color: #000;
+  font-size: 0.9em;
+  background-color: $primary-faded;
+}
+
+.toolbar-container {
+  background-color: $white;
+}
+
+.breadcrumbs .text-button, .action-buttons .text-button {
+  display: inline-block;
+  padding: 9px;
+  &:last-child {
+    padding-right: 0;
+  }
+  &:first-child {
+    padding-left: 0;
+  }
+}
+
+
+.action-buttons .dropdown-container:last-child a {
+  padding-right: $-s;
+  padding-left: $-s;
+}
+.action-buttons {
+  text-align: right;
+  &.text-left {
+    text-align: left;
+    .text-button {
+      padding-right: $-m;
+      padding-left: 0;
+    }
+  }
+  &.text-center {
+    text-align: center;
+  }
+}
+
+@include smaller-than($m) {
+  .breadcrumbs .text-button, .action-buttons .text-button {
+    padding: $-s $-xs;
+  }
+  .action-buttons .dropdown-container:last-child a {
+    padding-left: $-m;
+    padding-right: 13px;
+  }
+  .breadcrumbs .text-button {
+    font-size: 0;
+  }
+  .breadcrumbs a i {
+    font-size: $fs-m;
+    padding-right: 0;
+  }
+  .breadcrumbs span.sep {
+    padding: 0 $-xxs;
+  }
+}
+
+.nav-tabs {
+  text-align: center;
+  a, .tab-item {
+    padding: $-m;
+    display: inline-block;
+    color: #666;
+    cursor: pointer;
+    &.selected {
+      background-color: #f2f2f2;
+    }
+  }
+}
+.faded-small .nav-tabs a {
+  padding: 10px $fs-s;
+}

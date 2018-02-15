@@ -1,0 +1,10 @@
+/vendor
+/node_modules
+.env
+npm-debug.log
+/public/profileone
+/public/css/
+/public/js/
+/public/rg_RGB_.jpg
+/storage/images
+/public/api/

@@ -1,0 +1,248 @@
+@mixin generate-button-colors($textColor, $backgroundColor) {
+  background-color: $backgroundColor;
+  color: $textColor;
+  text-transform: uppercase;
+  border: 1px solid $backgroundColor;
+  vertical-align: top;
+  &:hover {
+    background-color: lighten($backgroundColor, 8%);
+    //box-shadow: $bs-med;
+    text-decoration: none;
+    color: $textColor;
+  }
+  &:active {
+    background-color: darken($backgroundColor, 8%);
+  }
+  &:focus {
+    background-color: lighten($backgroundColor, 4%);
+    box-shadow: $bs-light;
+    text-decoration: none;
+    color: $textColor;
+  }
+}
+
+// Button Specific Variables
+$button-border-radius: 2px;
+
+.button-base {
+  text-decoration: none;
+  font-size: $fs-m;
+  line-height: 1.4em;
+  padding: $-xs*1.3 $-m;
+  margin: $-xs $-xs $-xs 0;
+  display: inline-block;
+  border: none;
+  font-weight: 400;
+  outline: 0;
+  border-radius: $button-border-radius;
+  cursor: pointer;
+  transition: all ease-in-out 120ms;
+  box-shadow: 0;
+  @include generate-button-colors(#EEE, $primary);
+}
+
+.button, input[type="button"], input[type="submit"]  {
+  @extend .button-base;
+  &.pos {
+    background-color: #79589f;
+    background-image: -webkit-gradient(linear,right top,left bottom,color-stop(0,rgba(159,88,150,0)),color-stop(1,rgba(159,88,150,0.6)));
+    color: #eee;
+    text-transform: none;
+    font-weight: bold;
+    border: none;
+    vertical-align: top;
+  }
+  &.neg {
+    @include generate-button-colors(#EEE, $negative);
+  }
+  &.secondary {
+    @include generate-button-colors(#EEE, $secondary);
+  }
+  &.muted {
+    @include generate-button-colors(#EEE, #AAA);
+  }
+  &.muted-light {
+    @include generate-button-colors(#666, #e4e4e4);
+  }
+}
+
+.button.outline {
+  background-color: transparent;
+  color: #888;
+  border: 1px solid #DDD;
+  &:hover, &:focus, &:active {
+    box-shadow: none;
+    background-color: #EEE;
+  }
+  &.page {
+    border-color: $color-page;
+    color: $color-page;
+    &:hover, &:focus, &:active {
+      background-color: $color-page;
+      color: $white;
+    }
+  }
+  &.chapter {
+    border-color: $color-chapter;
+    color: $color-chapter;
+    &:hover, &:focus, &:active {
+      background-color: $color-chapter;
+      color: $white;
+    }
+  }
+  &.book {
+    border-color: $color-book;
+    color: $color-book;
+    &:hover, &:focus, &:active {
+      background-color: $color-book;
+      color: $white;
+    }
+  }
+}
+
+.text-button {
+  @extend .link;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  border: none;
+  user-select: none;
+  &:focus, &:active {
+    outline: 0;
+  }
+  &:hover {
+    text-decoration: none;
+  }
+  &.neg {
+    color: $negative;
+  }
+}
+
+.button-group {
+  @include clearfix;
+  .button, button[type="button"] {
+    margin: $-xs 0 $-xs 0;
+    float: left;
+    border-radius: 0;
+    &:first-child {
+      border-radius: $button-border-radius 0 0 $button-border-radius;
+    }
+    &:last-child {
+      border-radius: 0 $button-border-radius $button-border-radius 0;
+    }
+  }
+}
+
+.button.block {
+  width: 100%;
+  text-align: center;
+  &.text-left {
+    text-align: left;
+  }
+}
+
+.button.icon {
+  i {
+    padding-right: 0;
+  }
+}
+
+.button.svg {
+  svg {
+    display: inline-block;
+    position: absolute;
+    left: 31px;
+    top: $-s - 2px;
+    width: $-l;
+  }
+  padding: 33px 30px;
+  width: 0;
+  padding-bottom: $-s - 2px;
+  padding-left: $-m*2 + $-l;
+}
+
+.button[disabled] {
+  background-color: #BBB;
+  cursor: default;
+  &:hover {
+    background-color: #BBB;
+    cursor: default;
+    box-shadow: none;
+  }
+}
+
+.button-main {
+  font-family: "Lato", "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
+  -webkit-appearance: none;
+  font-size: 20px;
+  text-shadow: none;
+  line-height: 1.2;
+  display: inline-block;
+  outline: 0;
+  padding: 10px 16px;
+  margin: 0 10px 0 0;
+  position: relative;
+  border-radius: 3px;
+  border: 3px solid transparent;
+  color: white;
+  cursor: pointer;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-decoration: none !important;
+  text-align: center;
+  font-weight: normal !important;
+}
+
+.button-main:hover {
+  color: rgb(252, 252, 252);
+}
+
+.button-green {
+  background: #47cf73;
+}
+
+.button-dark {
+  background: #1e1e1e;
+  @include smaller-than($screen-sm) {
+    margin-top: 10px;
+  }
+}
+
+.footer-button {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin: 10px 0;
+  background: #645590;
+  color: white;
+}
+
+.button-footer {
+  font-family: "Lato", "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
+  -webkit-appearance: none;
+  font-size: 1rem;
+  text-shadow: none;
+  line-height: 1.2;
+  display: inline-block;
+  outline: 0;
+  padding: 10px 16px;
+  margin: 0 10px 0 0;
+  position: relative;
+  border-radius: 3px;
+  border: 3px solid transparent;
+  color: white;
+  cursor: pointer;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-decoration: none !important;
+  text-align: center;
+  font-weight: normal !important;
+}
+
+.button-footer:hover {
+  color: rgb(221, 221, 221)
+}
+
+.green-link {
+  color: #47cf73;
+}
