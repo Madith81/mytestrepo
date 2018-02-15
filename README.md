@@ -37,7 +37,7 @@ Some strings have colon-prefixed variables in such as `:userName`. Leave these v
 
 ## Workflow
 
-See our Workflow in [Trello](http://bit.ly/dptrello).
+See our Workflow in [GitHub Projects](http://bit.ly/dpworkflow).
 
 ## The Stack
 
