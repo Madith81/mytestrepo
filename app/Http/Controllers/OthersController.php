@@ -60,10 +60,10 @@ class OthersController extends Controller
         return redirect('https://trello.com/b/nUennIKj');
     }
 
-    // Source code on GitLab
+    // Source code on GitHub
     public function git()
     {
-        return redirect('https://gitlab.com/DocsPen/Platform');
+        return redirect('https://github.com/DocsPen/DocsPen');
     }
 
     // Blog on Tumblr
