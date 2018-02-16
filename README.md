@@ -1,4 +1,4 @@
-<p align="center"><a href="https://docspen.ga" target="_blank"><img src="https://i1.wp.com/cdn.jsdelivr.net/npm/docspen-static@1.0.0-common/imgs/propic.png?h=150&quality=2000"></a></p>
+<p align="center"><a href="https://docspen.ga" target="_blank"><img src="https://cdn.jsdelivr.net/npm/docspen-static@1.0.0-common/imgs/propic.png"></a></p>
 
 <p align="center">
 <a href="https://travis-ci.org/DocsPen/DocsPen"><img src="https://travis-ci.org/DocsPen/DocsPen.svg" alt="Build Status"></a>
