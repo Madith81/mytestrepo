@@ -2,12 +2,12 @@
 
 ## I want to report a problem or ask a question
 
-Before submitting a new GitLab issue, please make sure to
+Before submitting a new GitHub issue, please make sure to
 
-- Check out the README pages on [this repo](https://gitlab.com/DocsPen/Platform)
-- Search for [existing GitLab issues](https://gitlab.com/DocsPen/Platform/issues)
+- Check out the README pages on [this repo](https://github.com/DocsPen/Platform)
+- Search for [existing GitHub issues](https://github.com/DocsPen/Platform/issues)
 
-If the above doesn't help, please [submit an issue](https://gitlab.com/DocsPen/Platform/issues) on GitLab and provide information about your setup.
+If the above doesn't help, please [submit an issue](https://github.com/DocsPen/Platform/issues) on GitHub and provide information about your setup.
 
 **Note**: If you want to report a regression in _DocsPen_ (something that has worked before, but broke with a new release), please mark your issue title as such using `[Regression] Your title here`. This enables us to quickly detect and fix regressions.
 
