@@ -1,3 +1,16 @@
+<p align="center"><a href="https://docspen.ga" target="_blank"><img src="https://i1.wp.com/cdn.jsdelivr.net/npm/docspen-static@1.0.0-common/imgs/propic.png?quality=100&h=100"></a></p>
+
+<p align="center">
+<a href="https://github.com/DocsPen/Platform"><img src="https://cdn.jsdelivr.net/npm/docspen-static@1.0.0-common/imgs/open-source.svg" alt="Open Source"></a>
+<a href="https://travis-ci.org/DocsPen/DocsPen"><img src="https://travis-ci.org/DocsPen/DocsPen.svg" alt="Build Status"></a>
+<a href="https://david-dm.org/DocsPen/DocsPen?view=list"><img src="https://img.shields.io/david/DocsPen/DocsPen.svg" alt="David"></a>
+
+</p>
+
+<p align="center">
+<a href="https://waffle.io/DocsPen/DocsPen/metrics/throughput"><img src="https://graphs.waffle.io/DocsPen/DocsPen/throughput.svg" alt="Throughput Graph"></a>
+</p>
+
 ## DocsPen
 
 **DocsPen** is a hub to publish your own documentation for projects through online, it is a right choice for Professors & Teachers for publishing the content, which provides a pleasant and simple out of the box experience. New users to an instance should find the experience intuitive and only basic word-processing skills should be required to get involved in creating content on DocsPen. The platform should provide advanced power features to those that desire it but they should not interfere with the core simple user experience.
@@ -8,13 +21,13 @@ Check out [Setup Guide](docs/ServerSetup.md) for more information on how to inst
 
 ## Contribute to DocsPen
 
-Thank you for considering contributing to the DocsPen. To encourage active collaboration, DocsPen strongly encourages pull requests, not just bug reports. [DocsPen's Slack channel](https://docspen-slack.herokuapp.com) is created for developers to discuss DocsPen development concerns. If you have an idea (and not the code for it) you may contact us either with the we@docspen.com email address or submit it to [issues](https://gitlab.com/DocsPen/Platform/issues/new) in GitLab.
+Thank you for considering contributing to the DocsPen. To encourage active collaboration, DocsPen strongly encourages pull requests, not just bug reports. [DocsPen's Slack channel](https://docspen-slack.herokuapp.com) is created for developers to discuss DocsPen development concerns. If you have an idea (and not the code for it) you may contact us either with the we@docspen.com email address or submit it to [issues](https://github.com/DocsPen/DocsPen/issues/new) in GitHub.
 
 Check out [CONTRIBUTING Guide](CONTRIBUTING.md) for more information on how to help with _DocsPen_.
 
 ## Code of Conduct
 
-Help us keep `DocsPen` open and inclusive. Please read and follow our [Code of Conduct](https://gitlab.com/DocsPen/Platform/blob/master/CODE_OF_CONDUCT.md).
+Help us keep `DocsPen` open and inclusive. Please read and follow our [Code of Conduct](https://github.com/DocsPen/DocsPen/blob/master/CODE_OF_CONDUCT.md).
 
 ## Translations
 
@@ -37,11 +50,11 @@ Some strings have colon-prefixed variables in such as `:userName`. Leave these v
 
 ## Workflow
 
-See our Workflow in [Trello](http://bit.ly/dptrello).
+See our Workflow in [GitHub Projects](http://bit.ly/dpworkflow).
 
 ## The Stack
 
-These are the great open-source projects used to help build **DocsPen**
+These are some great open-source projects used to help build **DocsPen**
 
 ### Softwares and Backend
 * [NGINX](https://nginx.org)
