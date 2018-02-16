@@ -1,3 +1,9 @@
+<p align="center"><a href="https://docspen.ga" target="_blank"><img src="https://i1.wp.com/cdn.jsdelivr.net/npm/docspen-static@1.0.0-common/imgs/propic.png?h=150&quality=100"></a></p>
+
+<p align="center">
+<a href="https://travis-ci.org/DocsPen/DocsPen"><img src="https://travis-ci.org/DocsPen/DocsPen.svg" alt="Build Status"></a>
+</p>
+
 ## DocsPen
 
 **DocsPen** is a hub to publish your own documentation for projects through online, it is a right choice for Professors & Teachers for publishing the content, which provides a pleasant and simple out of the box experience. New users to an instance should find the experience intuitive and only basic word-processing skills should be required to get involved in creating content on DocsPen. The platform should provide advanced power features to those that desire it but they should not interfere with the core simple user experience.
