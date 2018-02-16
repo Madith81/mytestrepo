@@ -1,7 +1,14 @@
 <p align="center"><a href="https://docspen.ga" target="_blank"><img src="https://i1.wp.com/cdn.jsdelivr.net/npm/docspen-static@1.0.0-common/imgs/propic.png?quality=100&h=100"></a></p>
 
 <p align="center">
+<a href="https://github.com/DocsPen/Platform"><img src="https://cdn.jsdelivr.net/npm/docspen-static@1.0.0-common/imgs/open-source.svg" alt="Open Source"></a>
 <a href="https://travis-ci.org/DocsPen/DocsPen"><img src="https://travis-ci.org/DocsPen/DocsPen.svg" alt="Build Status"></a>
+<a href="https://david-dm.org/DocsPen/DocsPen?view=list"><img src="https://img.shields.io/david/DocsPen/DocsPen.svg" alt="David"></a>
+
+</p>
+
+<p align="center">
+<a href="https://waffle.io/DocsPen/DocsPen/metrics/throughput"><img src="https://graphs.waffle.io/DocsPen/DocsPen/throughput.svg" alt="Throughput Graph"></a>
 </p>
 
 ## DocsPen
