@@ -19,15 +19,15 @@
                     <a dropdown-toggle class="text-primary text-button"><i class="zmdi zmdi-more-vert"></i>{{ trans('common.more') }}</a>
                     <ul>
                         @if(userCan('page-create', $book))
-                            <a href="{{ $book->getUrl('/page/create') }}" class="text-primary"><i class="zmdi zmdi-file-text"></i>{{ trans('entities.pages_new') }}</a>
+                            <a href="{{ $book->getUrl('/page/create') }}" class="text-primary">@icon('page') {{ trans('entities.pages_new') }}</a>
                         @endif
 
                         @if(userCan('chapter-create', $book))
-                            <a href="{{ $book->getUrl('/chapter/create') }}" class="text-primary"><i class="zmdi zmdi-collection-bookmark"></i>{{ trans('entities.chapters_new') }}</a>
+                            <a href="{{ $book->getUrl('/chapter/create') }}" class="text-primary">@icon('chapter') {{ trans('entities.chapters_new') }}</a>
                         @endif
 
                         @if(userCan('book-update', $book))
-                            <li><a href="{{$book->getEditUrl()}}" class="text-primary"><i class="zmdi zmdi-edit"></i>{{ trans('common.edit') }}</a></li>
+                            <li><a href="{{$book->getEditUrl()}}" class="text-primary">@icon('edit') {{ trans('common.edit') }}</a></li>
                             <li><a href="{{ $book->getUrl('/sort') }}" class="text-primary"><i class="zmdi zmdi-sort"></i>{{ trans('common.sort') }}</a></li>
                         @endif
 
@@ -36,7 +36,7 @@
                         @endif
 
                         @if(userCan('book-delete', $book))
-                            <li><a href="{{ $book->getUrl('/delete') }}" class="text-neg"><i class="zmdi zmdi-delete"></i>{{ trans('common.delete') }}</a></li>
+                            <li><a href="{{ $book->getUrl('/delete') }}" class="text-neg">@icon('delete') {{ trans('common.delete') }}</a></li>
                         @endif
                     </ul>
                 </div>
@@ -51,7 +51,7 @@
         <div class="body">
             <form v-on:submit.prevent="searchBook" class="search-box">
                 <input v-model="searchTerm" v-on:change="checkSearchForm()" type="text" name="term" placeholder="{{ trans('entities.books_search_this') }}">
-                <button type="submit"><i class="zmdi zmdi-search"></i></button>
+                <button type="submit">@icon('search') </button>
                 <button v-if="searching" v-cloak class="text-neg" v-on:click="clearSearch()" type="button"><i class="zmdi zmdi-close"></i></button>
             </form>
         </div>
@@ -74,7 +74,7 @@
 
     @if(count($activity) > 0)
         <div class="activity card">
-            <h3><i class="zmdi zmdi-time"></i> {{ trans('entities.recent_activity') }}</h3>
+            <h3>@icon('time') {{ trans('entities.recent_activity') }}</h3>
             @include('partials.activity-list', [
                 'activity' => $activity
             ])
@@ -123,7 +123,7 @@
                 <div class="well">
                     <p class="text-muted italic">{{ trans('entities.books_empty_contents') }}</p>
                         @if(userCan('page-create', $book))
-                            <a href="{{ $book->getUrl('/page/create') }}" class="button outline page"><i class="zmdi zmdi-file-text"></i>{{ trans('entities.books_empty_create_page') }}</a>
+                            <a href="{{ $book->getUrl('/page/create') }}" class="button outline page">@icon('page') {{ trans('entities.books_empty_create_page') }}</a>
                         @endif
 
                         @if(userCan('page-create', $book) && userCan('chapter-create', $book))
@@ -131,7 +131,7 @@
                         @endif
 
                         @if(userCan('chapter-create', $book))
-                            <a href="{{ $book->getUrl('/chapter/create') }}" class="button outline chapter"><i class="zmdi zmdi-collection-bookmark"></i>{{ trans('entities.books_empty_add_chapter') }}</a>
+                            <a href="{{ $book->getUrl('/chapter/create') }}" class="button outline chapter">@icon('chapter') {{ trans('entities.books_empty_add_chapter') }}</a>
                         @endif
                 </div>
             @endif
