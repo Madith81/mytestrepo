@@ -165,6 +165,10 @@ function theme_path($path = '')
  */
 function icon($name, $attrs = [])
 {
+    $attrs = array_merge($attrs, [
+        'class' => 'svg-icon'
+    ]);
+
     $attrString = ' ';
     foreach ($attrs as $attrName => $attr) {
         $attrString .=  $attrName . '="' . $attr . '" ';
