@@ -44,7 +44,7 @@
                     <hr class="margin-top">
                     @foreach($socialDrivers as $driver => $name)
                         <a id="social-register-{{$driver}}" class="button block muted-light svg text-left" href="{{ baseUrl("/register/service/" . $driver) }}">
-                            @icon($driver)
+                            @icon('auth/' . $driver)
                         </a>
                     @endforeach
                 @endif
