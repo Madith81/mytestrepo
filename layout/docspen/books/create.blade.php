@@ -3,9 +3,9 @@
 @section('toolbar')
     <div class="col-sm-8 faded">
         <div class="breadcrumbs">
-            <a href="{{ baseUrl('/books') }}" class="text-button"><i class="zmdi zmdi-book"></i>{{ trans('entities.books') }}</a>
+            <a href="{{ baseUrl('/books') }}" class="text-button">@icon('book') {{ trans('entities.books') }}</a>
             <img src="https://cdnjs.cloudflare.com/ajax/libs/uswds/1.4.4/img/arrow-right.svg" style="height:10px">
-            <a href="{{ baseUrl('/books/create') }}" class="text-button"><i class="zmdi zmdi-plus"></i>{{ trans('entities.books_create') }}</a>
+            <a href="{{ baseUrl('/books/create') }}" class="text-button">@icon('add') {{ trans('entities.books_create') }}</a>
         </div>
     </div>
 @stop
