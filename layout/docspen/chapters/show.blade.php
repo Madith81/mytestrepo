@@ -17,7 +17,7 @@
                 </ul>
             </span>
             @if(userCan('page-create', $chapter))
-                <a href="{{ $chapter->getUrl('/create-page') }}" class="text-pos text-button"><i class="zmdi zmdi-plus"></i>{{ trans('entities.pages_new') }}</a>
+                <a href="{{ $chapter->getUrl('/create-page') }}" class="text-pos text-button">@icon('add') {{ trans('entities.pages_new') }}</a>
             @endif
 
             @if(userCan('chapter-update', $chapter))

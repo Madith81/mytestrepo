@@ -17,7 +17,7 @@
                 </ul>
             </span>
             @if(userCan('page-update', $page))
-                <a href="{{ $page->getUrl('/edit') }}" class="text-primary text-button" ><i class="zmdi zmdi-edit"></i>{{ trans('common.edit') }}</a>
+                <a href="{{ $page->getUrl('/edit') }}" class="text-primary text-button" >@icon('edit') {{ trans('common.edit') }}</a>
             @endif
 
             @if(userCan('page-update', $page) || userCan('restrictions-manage', $page) || userCan('page-delete', $page))
@@ -34,7 +34,7 @@
                         @endif
 
                         @if(userCan('page-delete', $page))
-                            <li><a href="{{ $page->getUrl('/delete') }}" class="text-neg"><i class="zmdi zmdi-delete"></i>{{ trans('common.delete') }}</a></li>
+                            <li><a href="{{ $page->getUrl('/delete') }}" class="text-neg">@icon('delete') {{ trans('common.delete') }}</a></li>
                         @endif
                     </ul>
                 </div>
