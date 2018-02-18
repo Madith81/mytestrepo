@@ -167,7 +167,7 @@ function theme_path($path = '')
  */
 function icon($name)
 {
-    $iconPath = 'https://cdnjs.cloudflare.com/ajax/libs/' . $name . '.svg';
+    $iconPath = 'https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/' . $name . '.svg';
 
     $fileContents = file_get_contents($iconPath);
     return  str_replace('<svg', '<svg' . $fileContents);
