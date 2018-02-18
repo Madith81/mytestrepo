@@ -165,17 +165,9 @@ function theme_path($path = '')
  * @param array $attrs
  * @return mixed
  */
-function icon($name, $attrs = [])
+function icon($name)
 {
-    $attrs = array_merge([
-        'class' => 'svg-icon',
-        'data-icon' => $name
-    ], $attrs);
-    $attrString = ' ';
-    foreach ($attrs as $attrName => $attr) {
-        $attrString .=  $attrName . '="' . $attr . '" ';
-    }
-    $iconPath = resource_path('assets/icons/' . $name . '.svg');
+    $iconPath = 'https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/' . $name . '.svg';
     $themeIconPath = theme_path('icons/' . $name . '.svg');
     if ($themeIconPath && file_exists($themeIconPath)) {
         $iconPath = $themeIconPath;
