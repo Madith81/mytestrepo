@@ -179,13 +179,6 @@ function icon($name, $attrs = [])
     }
     
     $iconPath = 'https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/' . $name . '.svg';
-    $themeIconPath = theme_path('icons/' . $name . '.svg');
-    
-    if ($themeIconPath && file_exists($themeIconPath)) {
-        $iconPath = $themeIconPath;
-    } else if (!file_exists($iconPath)) {
-        return '';
-    }
     
     $fileContents = file_get_contents($iconPath);
     
