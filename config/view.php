@@ -1,7 +1,7 @@
 <?php
 
 $viewPaths = [realpath(base_path('layout/'))];
-if ($layout = env('APP_LAYOUT', false)) {
+if ($layout = env('APP_DESIGN', false)) {
     array_unshift($viewPaths, base_path('layout/'.$layout));
 }
 
@@ -18,7 +18,7 @@ return [
     |
     */
 
-    'theme' => env('APP_THEME', true),
+    'theme' => env('APP_DESIGN', true),
 
     /*
     |--------------------------------------------------------------------------
