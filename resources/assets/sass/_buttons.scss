@@ -143,9 +143,9 @@ $button-border-radius: 2px;
 }
 
 .button.icon {
-  i {
-    padding-right: 0;
-  }
+  .svg-icon {
+     margin-right: 0;
+   }
 }
 
 .button.svg {
