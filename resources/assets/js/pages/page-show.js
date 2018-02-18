@@ -16,31 +16,28 @@ let setupPageShow = window.setupPageShow = function (pageId) {
     let pointerSectionId = '';
 
     // Select all contents on input click
-    $pointer.on('click', 'input', event => {
+    $pointer.on('click', 'input', function (e) {
         $(this).select();
-        event.stopPropagation();
-    });
-
-    $pointer.on('click focus', event => {
-        event.stopPropagation();
+        e.stopPropagation();
     });
 
     // Pointer mode toggle
     $pointer.on('click', 'span.icon', event => {
-        event.stopPropagation();
         let $icon = $(event.currentTarget);
         pointerModeLink = !pointerModeLink;
-        $icon.find('[data-icon="include"]').toggle(!pointerModeLink);
-        $icon.find('[data-icon="link"]').toggle(pointerModeLink);
+        $icon.html(pointerModeLink ? '<i class="zmdi zmdi-link"></i>' : '<i class="zmdi zmdi-square-down"></i>');
         updatePointerContent();
     });
 
     // Set up clipboard
-    let clipboard = new Clipboard($pointer[0].querySelector('button'));
+    let clipboard = new Clipboard('#pointer button');
 
     // Hide pointer when clicking away
     $(document.body).find('*').on('click focus', event => {
         if (!pointerShowing || isSelection) return;
+        let target = $(event.target);
+        if (target.is('.zmdi') || $(event.target).closest('#pointer').length === 1) return;
+
         $pointer.detach();
         pointerShowing = false;
     });
