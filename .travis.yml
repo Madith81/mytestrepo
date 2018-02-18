@@ -2,35 +2,33 @@ dist: trusty
 sudo: false
 language: php
 php:
-  - '7.1'
-
+- '7.1'
 cache:
   directories:
-    - $HOME/.composer/cache
-
+  - "$HOME/.composer/cache"
 before_script:
-  - npm install -g gulp gulp-cli
-  - cp .env.example .env
-  - mysql -u root -e 'create database `docspen-test`;'
-  - mysql -u root -e "CREATE USER 'docspen-test'@'localhost' IDENTIFIED BY 'docspen-test';"
-  - mysql -u root -e "GRANT ALL ON \`docspen-test\`.* TO 'docspen-test'@'localhost';"
-  - mysql -u root -e "FLUSH PRIVILEGES;"
-  - phpenv config-rm xdebug.ini
-  - composer install --prefer-dist --no-interaction
-  - npm install
-  - php artisan clear-compiled -n
-  - php artisan optimize -n
-  - php artisan view:clear
-  - php artisan cache:clear
-  - php artisan migrate --force -n --database=mysql_testing
-  - php artisan db:seed --force -n --class=DummyContentSeeder --database=mysql_testing
-
+- npm install -g gulp gulp-cli
+- cp .env.example .env
+- mysql -u root -e 'create database `docspen-test`;'
+- mysql -u root -e "CREATE USER 'docspen-test'@'localhost' IDENTIFIED BY 'docspen-test';"
+- mysql -u root -e "GRANT ALL ON \`docspen-test\`.* TO 'docspen-test'@'localhost';"
+- mysql -u root -e "FLUSH PRIVILEGES;"
+- phpenv config-rm xdebug.ini
+- composer install --prefer-dist --no-interaction
+- npm install
+- php artisan clear-compiled -n
+- php artisan optimize -n
+- php artisan view:clear
+- php artisan cache:clear
+- php artisan migrate --force -n --database=mysql_testing
+- php artisan db:seed --force -n --class=DummyContentSeeder --database=mysql_testing
 after_failure:
-  - cat storage/logs/laravel.log
-
+- cat storage/logs/laravel.log
 script:
   - npm run production
   - ./vendor/bin/phpcs
-  
+before_install:
+  - openssl aes-256-cbc -K $encrypted_a8512aa711f7_key -iv $encrypted_a8512aa711f7_iv
+  -in deploy.enc -out deploy -d
 after_success:
-  - git pull origin master
+  - git pull origin master  
