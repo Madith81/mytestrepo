@@ -189,7 +189,7 @@ function icon($name, $attrs = [])
     
     $fileContents = file_get_contents($iconPath);
     
-    return  str_replace('<svg', '<svg' . $attrString, $fileContents);
+    return  str_replace('<svg', '<svg' . $fileContents);
 }
 
 /**
