@@ -11,7 +11,7 @@
     <div class="container small">
         <p>&nbsp;</p>
         <div class="card">
-            <h3>@icon('users-add') {{ trans('settings.users_add_new') }}</h3>
+            <h3><i class="zmdi zmdi-accounts-add"></i> {{ trans('settings.users_add_new') }}</h3>
             <div class="body">
                 <form action="{{ baseUrl("/settings/users/create") }}" method="post">
                     {!! csrf_field() !!}

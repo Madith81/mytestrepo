@@ -1,7 +1,7 @@
 @extends('public')
 
 @section('header-buttons')
-    <a href="{{ baseUrl("/login") }}">@icon('login') {{ trans('auth.log_in') }}</a>
+    <a href="{{ baseUrl("/login") }}"><i class="zmdi zmdi-sign-in"></i>{{ trans('auth.log_in') }}</a>
 @stop
 
 @section('content')
@@ -44,7 +44,7 @@
                     <hr class="margin-top">
                     @foreach($socialDrivers as $driver => $name)
                         <a id="social-register-{{$driver}}" class="button block muted-light svg text-left" href="{{ baseUrl("/register/service/" . $driver) }}">
-                            @icon('auth/' . $driver)
+                            @icon($driver)
                         </a>
                     @endforeach
                 @endif

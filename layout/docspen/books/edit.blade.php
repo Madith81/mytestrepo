@@ -11,7 +11,7 @@
     <div class="container small">
         <p>&nbsp;</p>
         <div class="card">
-            <h3>@icon('edit') {{ trans('entities.books_edit') }}</h3>
+            <h3><i class="zmdi zmdi-edit"></i> {{ trans('entities.books_edit') }}</h3>
             <div class="body">
                 <form action="{{ $book->getUrl() }}" method="POST">
                     <input type="hidden" name="_method" value="PUT">

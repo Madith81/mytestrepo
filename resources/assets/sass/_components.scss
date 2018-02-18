@@ -9,21 +9,17 @@
   border-radius: $-xxs;
   box-shadow: $bs-med;
   z-index: 999999;
+  display: block;
   cursor: pointer;
   max-width: 480px;
   transition: transform ease-in-out 360ms;
   transform: translate3d(580px, 0, 0);
-  display: grid;
-   grid-template-columns: 64px 1fr;
-   span, svg {
-     vertical-align: middle;
-     justify-self: center;
-     align-self: center;
+  i, span {
+    display: table-cell;
   }
-  svg {
-    fill: #EEEEEE;
-    width: 4em;
-    padding-right: $-m;
+  i {
+    font-size: 2em;
+    padding-right: $-l;
   }
   span {
     vertical-align: middle;
@@ -50,12 +46,15 @@
   margin: 0;
   transition: all ease-in-out 180ms;
   user-select: none;
-  svg[data-icon="caret-right"] {
+  i.zmdi-caret-right {
     transition: all ease-in-out 180ms;
     transform: rotate(0deg);
     transform-origin: 25% 50%;
   }
-  &.open svg[data-icon="caret-right"] {
+  &.open {
+    //margin-bottom: 0;
+  }
+  &.open i.zmdi-caret-right {
     transform: rotate(90deg);
   }
 }
@@ -72,6 +71,7 @@
   left: 0;
   right: 0;
   bottom: 0;
+  display: flex;
   align-items: center;
   justify-content: center;
   display: none;

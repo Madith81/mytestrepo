@@ -16,7 +16,7 @@
 
     <div class="flex-fill flex" @yield('container-attrs') >
         <div sidebar class="sidebar flex print-hidden" id="sidebar">
-            <div class="sidebar-toggle primary-background-light">@icon('caret-right-circle')
+            <div class="sidebar-toggle primary-background-light"><i class="zmdi zmdi-caret-right-circle"></i>
             </div>
             <div class="scroll-body">
                 @yield('sidebar')

@@ -16,7 +16,7 @@
         <div class="row">
             <div class="col-md-8">
                 <div class="card">
-                    <h3>@icon('sort') {{ trans('entities.books_sort') }}</h3>
+                    <h3><i class="zmdi zmdi-sort"></i> {{ trans('entities.books_sort') }}</h3>
                     <div class="body">
                         <div id="sort-boxes">
                             @include('books.sort-box', [
@@ -42,12 +42,12 @@
 
             <div class="col-md-4">
                 <div class="card">
-                    <h3>@icon('book') {{ trans('entities.books_sort_show_other') }}</h3>
+                    <h3><i class="zmdi zmdi-book"></i> {{ trans('entities.books_sort_show_other') }}</h3>
                     <div class="body" id="additional-books">
                         @foreach($books as $otherBook)
                             @if($otherBook->id !== $book->id)
                                 <div>
-                                    <a href="{{ $otherBook->getUrl('/sort-item') }}" class="text-book">@icon('book') {{ $otherBook->name }}</a>
+                                    <a href="{{ $otherBook->getUrl('/sort-item') }}" class="text-book"><i class="zmdi zmdi-book"></i>{{ $otherBook->name }}</a>
                                 </div>
                             @endif
                         @endforeach
