@@ -168,14 +168,9 @@ function theme_path($path = '')
 function icon($name)
 {
     $iconPath = 'https://cdnjs.cloudflare.com/ajax/libs/' . $name . '.svg';
-    $themeIconPath = theme_path('icons/' . $name . '.svg');
-    if ($themeIconPath && file_exists($themeIconPath)) {
-        $iconPath = $themeIconPath;
-    } else if (!file_exists($iconPath)) {
-        return '';
-    }
+
     $fileContents = file_get_contents($iconPath);
-    return  str_replace('<svg', '<svg' . $attrString, $fileContents);
+    return  str_replace('<svg', '<svg' . $fileContents);
 }
 
 /**
