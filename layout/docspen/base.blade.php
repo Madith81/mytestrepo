@@ -68,7 +68,7 @@
 
     <div back-to-top>
         <div class="inner">
-            <i class="zmdi zmdi-chevron-up"></i> <span>{{ trans('common.back_to_top') }}</span>
+            @icon('chevron-up') <span>{{ trans('common.back_to_top') }}</span>
         </div>
     </div>
 
