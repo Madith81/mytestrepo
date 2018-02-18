@@ -22,17 +22,6 @@
   animation-name: none !important;
 }
 
-[ng\:cloak],
-[ng-cloak],
-.ng-cloak {
-  display: none !important;
-  user-select: none;
-}
-
-[ng-click] {
-  cursor: pointer;
-}
-
 // Jquery Sortable Styles
 .dragged {
   position: absolute;
@@ -128,9 +117,14 @@ $btt-size: 40px;
   position: fixed;
   bottom: $-m;
   right: $-l;
-  padding: $-xs $-s;
+  padding: 5px 7px;
   cursor: pointer;
   color: $white;
+  fill: $white;
+  svg {
+    width: $btt-size / 1.5;
+    margin-right: 4px;
+  }
   width: $btt-size;
   height: $btt-size;
   border-radius: $btt-size;
@@ -148,15 +142,10 @@ $btt-size: 40px;
   .inner {
     width: $btt-size*3.4;
   }
-  i {
-    margin: 0;
-    font-size: 28px;
-    padding: 0 $-s 0 0;
-  }
   span {
-    line-height: $-s;
     position: relative;
-    top: -5px;
+    vertical-align: top;
+    line-height: 2;
   }
 }
 
