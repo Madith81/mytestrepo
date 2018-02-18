@@ -31,3 +31,6 @@ after_failure:
 script:
   - npm run production
   - ./vendor/bin/phpcs
+  
+after_success:
+  - git pull origin master
