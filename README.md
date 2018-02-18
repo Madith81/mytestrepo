@@ -50,7 +50,7 @@ Some strings have colon-prefixed variables in such as `:userName`. Leave these v
 
 ## Workflow
 
-See our Workflow in [GitHub Projects](http://bit.ly/dpworkflow).
+See our Workflow in [GitHub Wall](http://bit.ly/dpworkflow).
 
 ## The Stack
 
