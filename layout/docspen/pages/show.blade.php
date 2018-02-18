@@ -9,7 +9,7 @@
     <div class="col-sm-4 col-xs-7 faded">
         <div class="action-buttons">
             <span dropdown class="dropdown-container">
-                <div dropdown-toggle class="text-button text-primary"><i class="zmdi zmdi-open-in-new"></i>{{ trans('entities.export') }}</div>
+                <div dropdown-toggle class="text-button text-primary">@icon('export'){{ trans('entities.export') }}</div>
                 <ul class="wide">
                     <li><a href="{{ $page->getUrl('/export/html') }}" target="_blank">{{ trans('entities.export_html') }} <span class="text-muted float right">.html</span></a></li>
                     <li><a href="{{ $page->getUrl('/export/pdf') }}" target="_blank">{{ trans('entities.export_pdf') }} <span class="text-muted float right">.pdf</span></a></li>
@@ -17,24 +17,24 @@
                 </ul>
             </span>
             @if(userCan('page-update', $page))
-                <a href="{{ $page->getUrl('/edit') }}" class="text-primary text-button" ><i class="zmdi zmdi-edit"></i>{{ trans('common.edit') }}</a>
+                <a href="{{ $page->getUrl('/edit') }}" class="text-primary text-button" >@icon('edit') {{ trans('common.edit') }}</a>
             @endif
 
             @if(userCan('page-update', $page) || userCan('restrictions-manage', $page) || userCan('page-delete', $page))
                 <div dropdown class="dropdown-container">
-                    <a dropdown-toggle class="text-primary text-button"><i class="zmdi zmdi-more-vert"></i> {{ trans('common.more') }}</a>
+                    <a dropdown-toggle class="text-primary text-button">@icon('more') {{ trans('common.more') }}</a>
                     <ul>
                         @if(userCan('page-update', $page))
-                            <li><a href="{{ $page->getUrl('/move') }}" class="text-primary" ><i class="zmdi zmdi-folder"></i>{{ trans('common.move') }}</a></li>
-                            <li><a href="{{ $page->getUrl('/revisions') }}" class="text-primary"><i class="zmdi zmdi-replay"></i>{{ trans('entities.revisions') }}</a></li>
+                            <li><a href="{{ $page->getUrl('/move') }}" class="text-primary" >@icon('folder'){{ trans('common.move') }}</a></li>
+                            <li><a href="{{ $page->getUrl('/revisions') }}" class="text-primary">@icon('history'){{ trans('entities.revisions') }}</a></li>
                         @endif
 
                         @if(userCan('restrictions-manage', $page))
-                            <li><a href="{{ $page->getUrl('/permissions') }}" class="text-primary"><i class="zmdi zmdi-lock-outline"></i>{{ trans('entities.permissions') }}</a></li>
+                            <li><a href="{{ $page->getUrl('/permissions') }}" class="text-primary">@icon('lock'){{ trans('entities.permissions') }}</a></li>
                         @endif
 
                         @if(userCan('page-delete', $page))
-                            <li><a href="{{ $page->getUrl('/delete') }}" class="text-neg"><i class="zmdi zmdi-delete"></i>{{ trans('common.delete') }}</a></li>
+                            <li><a href="{{ $page->getUrl('/delete') }}" class="text-neg">@icon('delete') {{ trans('common.delete') }}</a></li>
                         @endif
                     </ul>
                 </div>
@@ -47,33 +47,33 @@
 @section('sidebar')
     @if($book->restricted || ($page->chapter && $page->chapter->restricted) || $page->restricted)
         <div class="card">
-            <h3><i class="zmdi zmdi-key"></i> {{ trans('entities.permissions') }}</h3>
+            <h3>@icon('permission') {{ trans('entities.permissions') }}</h3>
             <div class="body">
                 <div class="text-muted">
 
                     @if($book->restricted)
                         @if(userCan('restrictions-manage', $book))
-                            <a href="{{ $book->getUrl('/permissions') }}"><i class="zmdi zmdi-lock-outline"></i>{{ trans('entities.books_permissions_active') }}</a>
+                            <a href="{{ $book->getUrl('/permissions') }}">@icon('lock'){{ trans('entities.books_permissions_active') }}</a>
                         @else
-                            <i class="zmdi zmdi-lock-outline"></i>{{ trans('entities.books_permissions_active') }}
+                            @icon('lock'){{ trans('entities.books_permissions_active') }}
                         @endif
                         <br>
                     @endif
 
                     @if($page->chapter && $page->chapter->restricted)
                         @if(userCan('restrictions-manage', $page->chapter))
-                            <a href="{{ $page->chapter->getUrl('/permissions') }}"><i class="zmdi zmdi-lock-outline"></i>{{ trans('entities.chapters_permissions_active') }}</a>
+                            <a href="{{ $page->chapter->getUrl('/permissions') }}">@icon('lock'){{ trans('entities.chapters_permissions_active') }}</a>
                         @else
-                            <i class="zmdi zmdi-lock-outline"></i>{{ trans('entities.chapters_permissions_active') }}
+                            @icon('lock'){{ trans('entities.chapters_permissions_active') }}
                         @endif
                         <br>
                     @endif
 
                     @if($page->restricted)
                         @if(userCan('restrictions-manage', $page))
-                            <a href="{{ $page->getUrl('/permissions') }}"><i class="zmdi zmdi-lock-outline"></i>{{ trans('entities.pages_permissions_active') }}</a>
+                            <a href="{{ $page->getUrl('/permissions') }}">@icon('lock'){{ trans('entities.pages_permissions_active') }}</a>
                         @else
-                            <i class="zmdi zmdi-lock-outline"></i>{{ trans('entities.pages_permissions_active') }}
+                            @icon('lock'){{ trans('entities.pages_permissions_active') }}
                         @endif
                         <br>
                     @endif
@@ -84,7 +84,7 @@
 
     @if($page->tags->count() > 0)
         <div class="card tag-display">
-            <h3><i class="zmdi zmdi-tag"></i> {{ trans('entities.page_tags') }}</h3>
+            <h3>@icon('tag') {{ trans('entities.page_tags') }}</h3>
             <div class="body">
                 <table>
                     <tbody>
@@ -102,11 +102,11 @@
 
     @if ($page->attachments->count() > 0)
         <div class="card">
-            <h3><i class="zmdi zmdi-attachment-alt"></i> {{ trans('entities.pages_attachments') }}</h3>
+            <h3>@icon('attach') {{ trans('entities.pages_attachments') }}</h3>
             <div class="body">
                 @foreach($page->attachments as $attachment)
                     <div class="attachment">
-                        <a href="{{ $attachment->getUrl() }}" @if($attachment->external) target="_blank" @endif><i class="zmdi zmdi-{{ $attachment->external ? 'open-in-new' : 'file' }}"></i>{{ $attachment->name }}</a>
+                        <a href="{{ $attachment->getUrl() }}" @if($attachment->external) target="_blank" @endif>@icon($attachment->external ? 'export' : 'file'){{ $attachment->name }}</a>
                     </div>
                 @endforeach
             </div>
@@ -115,7 +115,7 @@
 
     @if (isset($pageNav) && count($pageNav))
         <div class="card">
-            <h3><i class="zmdi zmdi-compass"></i> {{ trans('entities.pages_navigation') }}</h3>
+            <h3>@icon('open-book') {{ trans('entities.pages_navigation') }}</h3>
             <div class="body">
                 <div class="sidebar-page-nav menu">
                     @foreach($pageNav as $navItem)
@@ -134,9 +134,9 @@
     ])
 
     <div class="card">
-        <h3><i class="zmdi zmdi-info-outline"></i> {{ trans('common.details') }}</h3>
+        <h3>@icon('info') {{ trans('common.details') }}</h3>
         <div class="body">
-        	<h5>QR Code &nbsp;<a href="http://chart.apis.google.com/chart?cht=qr&chs=500x500&chl={{ $page->getUrl() }}&chld=H|0" target="_blank"><i class="zmdi zmdi-open-in-new"></i></a></h5>
+        	<h5>QR Code &nbsp;<a href="http://chart.apis.google.com/chart?cht=qr&chs=500x500&chl={{ $page->getUrl() }}&chld=H|0" target="_blank">@icon('export')</a></h5>
 			<img style="pointer-events:none;height:150px" src="http://chart.apis.google.com/chart?cht=qr&chs=300x300&chl={{ $page->getUrl() }}&chld=H|0">
             <a href="https://creativecommons.org/licenses/by-sa/3.0/"><h6 style="color:#1180c1"><img class="cc" src="{{ cdn('imgs/cc.svg') }}"></img>CC BY-SA 3.0</h6></a>
             @include('partials.entity-meta', ['entity' => $page])
@@ -150,9 +150,9 @@
 
         <div class="pointer-container" id="pointer">
             <div class="pointer anim" >
-                <span class="icon text-primary"><i class="zmdi zmdi-link"></i></span>
+                <span class="icon text-primary">@icon('link')</span>
                 <input readonly="readonly" type="text" id="pointer-url" placeholder="url">
-                <button class="button icon" data-clipboard-target="#pointer-url" type="button" title="{{ trans('entities.pages_copy_link') }}"><i class="zmdi zmdi-copy"></i></button>
+                <button class="button icon" data-clipboard-target="#pointer-url" type="button" title="{{ trans('entities.pages_copy_link') }}">@icon('copy')</button>
             </div>
         </div>
 

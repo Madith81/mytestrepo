@@ -3,7 +3,7 @@
 @section('toolbar')
     <div class="col-sm-12 faded">
         <div class="breadcrumbs">
-            <a href="{{ baseUrl("/search?term=" . urlencode($searchTerm)) }}" class="text-button"><i class="zmdi zmdi-search"></i>{{ trans('entities.search_for_term', ['term' => $searchTerm]) }}</a>
+            <a href="{{ baseUrl("/search?term=" . urlencode($searchTerm)) }}" class="text-button">@icon('search'){{ trans('entities.search_for_term', ['term' => $searchTerm]) }}</a>
         </div>
     </div>
 @stop
@@ -32,7 +32,7 @@
                             <input class="exact-input outline" v-on:input="exactChange" type="text" v-model="search.exactTerms[i]"></td>
                         <td>
                             <button type="button" class="text-neg text-button" v-on:click="removeExact(i)">
-                                <i class="zmdi zmdi-close"></i>
+                                @icon('close')
                             </button>
                         </td>
                     </tr>
@@ -40,7 +40,7 @@
                     <tr>
                         <td colspan="2">
                             <button type="button" class="text-button" v-on:click="addExact">
-                                <i class="zmdi zmdi-plus-circle-o"></i>{{ trans('common.add') }}
+                                @icon('add-circle'){{ trans('common.add') }}
                             </button>
                         </td>
                     </tr>
@@ -53,14 +53,14 @@
                             <input class="tag-input outline" v-on:input="tagChange" type="text" v-model="search.tagTerms[i]"></td>
                         <td>
                             <button type="button" class="text-neg text-button" v-on:click="removeTag(i)">
-                                <i class="zmdi zmdi-close"></i>
+                                @icon('close')
                             </button>
                         </td>
                     </tr>
                     <tr>
                         <td colspan="2">
                             <button type="button" class="text-button" v-on:click="addTag">
-                                <i class="zmdi zmdi-plus-circle-o"></i>{{ trans('common.add') }}
+                                @icon('add-circle'){{ trans('common.add') }}
                             </button>
                         </td>
                     </tr>
@@ -118,7 +118,7 @@
                         <td>
                             <button v-if="search.dates.updated_after" type="button" class="text-neg text-button"
                                     v-on:click="dateRemove('updated_after')">
-                                <i class="zmdi zmdi-close"></i>
+                                @icon('close')
                             </button>
                         </td>
                     </tr>
@@ -139,7 +139,7 @@
                         <td>
                             <button v-if="search.dates.updated_before" type="button" class="text-neg text-button"
                                     v-on:click="dateRemove('updated_before')">
-                                <i class="zmdi zmdi-close"></i>
+                                @icon('close')
                             </button>
                         </td>
                     </tr>
@@ -160,7 +160,7 @@
                         <td>
                             <button v-if="search.dates.created_after" type="button" class="text-neg text-button"
                                     v-on:click="dateRemove('created_after')">
-                                <i class="zmdi zmdi-close"></i>
+                                @icon('close')
                             </button>
                         </td>
                     </tr>
@@ -181,7 +181,7 @@
                         <td>
                             <button v-if="search.dates.created_before" type="button" class="text-neg text-button"
                                     v-on:click="dateRemove('created_before')">
-                                <i class="zmdi zmdi-close"></i>
+                                @icon('close')
                             </button>
                         </td>
                     </tr>

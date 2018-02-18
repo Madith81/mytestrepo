@@ -18,7 +18,7 @@
 
         <div sidebar class="sidebar flex print-hidden" id="sidebar">
             <div class="sidebar-toggle primary-background-light">
-                <i class="zmdi zmdi-caret-right-circle"></i>
+                @icon('caret-right-circle')
             </div>
 
             <div class="scroll-body">

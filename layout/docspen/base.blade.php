@@ -39,7 +39,7 @@
                     <div class="float right">
                         <div class="header-search">
                             <form action="{{ baseUrl('/search') }}" method="GET" class="search-box">
-                                <button id="header-search-box-button" type="submit"><i class="zmdi zmdi-search"></i> </button>
+                                <button id="header-search-box-button" type="submit">@icon('search') </button>
                                 <input id="header-search-box-input" type="text" name="term" tabindex="2" maxlength="32" placeholder="{{ trans('common.search') }}" value="{{ isset($searchTerm) ? $searchTerm : ''  }}" name="message" minlength="3" required>
                             </form>
                         </div>
@@ -50,7 +50,7 @@
                             @endif
 
                             @if(!signedInUser())
-                                <a href="{{ baseUrl('/login') }}"><i class="zmdi zmdi-sign-in"></i>{{ trans('auth.log_in') }}</a>
+                                <a href="{{ baseUrl('/login') }}">@icon('login') {{ trans('auth.log_in') }}</a>
                             @endif
                         </div>
                         @if(signedInUser())
@@ -68,7 +68,7 @@
 
     <div back-to-top>
         <div class="inner">
-            <i class="zmdi zmdi-chevron-up"></i> <span>{{ trans('common.back_to_top') }}</span>
+            @icon('chevron-up') <span>{{ trans('common.back_to_top') }}</span>
         </div>
     </div>
 

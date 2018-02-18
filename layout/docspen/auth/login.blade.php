@@ -2,7 +2,7 @@
 
 @section('header-buttons')
     @if(setting('registration-enabled', false))
-        <a href="{{ baseUrl("/register") }}"><i class="zmdi zmdi-account-add"></i>{{ trans('auth.sign_up') }}</a>
+        <a href="{{ baseUrl("/register") }}">@icon('new-user') {{ trans('auth.sign_up') }}</a>
     @endif
 @stop
 
@@ -32,7 +32,7 @@
                     <hr class="margin-top">
                     @foreach($socialDrivers as $driver => $name)
                         <a id="social-login-{{$driver}}" class="button block muted-light svg text-left" href="{{ baseUrl("/login/service/" . $driver) }}">
-                            @icon($driver)
+                            @icon('auth/' . $driver)
                         </a>
                     @endforeach
                 @endif

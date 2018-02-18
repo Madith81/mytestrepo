@@ -1,6 +1,6 @@
 <div class="breadcrumbs">
     @if (userCan('view', $page->book))
-        <a href="{{ $page->book->getUrl() }}" class="text-book text-button"><i class="zmdi zmdi-book"></i>{{ $page->book->getShortName() }}</a>
+        <a href="{{ $page->book->getUrl() }}" class="text-book text-button">@icon('book') {{ $page->book->getShortName() }}</a>
         <img src="https://cdnjs.cloudflare.com/ajax/libs/uswds/1.4.4/img/arrow-right.svg" style="height:10px">
     @endif
 
@@ -12,5 +12,5 @@
         <img src="https://cdnjs.cloudflare.com/ajax/libs/uswds/1.4.4/img/arrow-right.svg" style="height:10px">
     @endif
 
-    <a href="{{ $page->getUrl() }}" class="text-page text-button"><i class="zmdi zmdi-file"></i>{{ $page->getShortName() }}</a>
+    <a href="{{ $page->getUrl() }}" class="text-page text-button">@icon('page'){{ $page->getShortName() }}</a>
 </div>

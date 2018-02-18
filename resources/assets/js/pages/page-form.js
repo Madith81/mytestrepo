@@ -293,7 +293,7 @@ function drawIoPlugin() {
 
         editor.addButton('drawio', {
             tooltip: 'Drawing',
-            image: 'https://cdn.jsdelivr.net/npm/docspen-static@1.0.3-beta/imgs/drawing.svg',
+            image: window.baseUrl('/icon/drawing.svg?color=000000'),
             cmd: 'drawio'
         });
 

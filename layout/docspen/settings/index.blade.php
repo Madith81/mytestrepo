@@ -15,7 +15,7 @@
     </div>
 
     <div class="card">
-        <h3><i class="zmdi zmdi-settings-square"></i> {{ trans('settings.app_settings') }}</h3>
+        <h3>@icon('settings') {{ trans('settings.app_settings') }}</h3>
         <div class="body">
             <form action="{{ baseUrl("/settings") }}" method="POST">
             {!! csrf_field() !!}
@@ -119,7 +119,7 @@
     <p>&nbsp;</p>
 
     <div class="card">
-        <h3><i class="zmdi zmdi-accounts-add"></i> {{ trans('settings.reg_settings') }}</h3>
+        <h3>@icon('users-add') {{ trans('settings.reg_settings') }}</h3>
         <div class="body">
             <form action="{{ baseUrl("/settings") }}" method="POST">
                 {!! csrf_field() !!}
